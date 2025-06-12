@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="styles.css"?>
+<!DOCTYPE catalog>
+<catalog>
+    <h1>Фильмы, которые я бы хотела посмотреть🖤</h1>
+    <movie>
+        <title>Интерстеллар</title>
+        <duration>169 минут</duration>
+        <genre>Фантастика</genre>
+        <rating>8.6</rating>
+        
+    </movie>
+    <movie>
+        
+            <title>Бойцовский клуб</title>
+            <duration>139 минут</duration>
+            <genre>Драма</genre>
+            <rating>8.8</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Властелин колец</title>
+            <duration>201 минута</duration>
+            <genre>Фэнтези</genre>
+            <rating>8.9</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Молчание ягнят</title>
+            <duration>138 минут</duration>
+            <genre>Триллер</genre>
+            <rating>8.6</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Донни Дарко</title>
+            <duration>113 минут</duration>
+            <genre>Фантастика</genre>
+            <rating>8.0</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Помни</title>
+            <duration>113 минут</duration>
+            <genre>Триллер</genre>
+            <rating>8.4</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Тринадцать</title>
+            <duration>100 минут</duration>
+            <genre>Драма</genre>
+            <rating>6.8</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Таксист</title>
+            <duration>114 минут</duration>
+            <genre>Драма</genre>
+            <rating>8.2</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Учитель фортепиано</title>
+            <duration>131 минут</duration>
+            <genre>Драма</genre>
+            <rating>7.4</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Как разговаривать с девушками на вечеринках</title>
+            <duration>102 минуты</duration>
+            <genre>Фантастика</genre>
+            <rating>5.9</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Красные огни</title>
+            <duration>114 минут</duration>
+            <genre>Триллер</genre>
+            <rating>6.2</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Хорошо быть тихоней</title>
+            <duration>102 минуты</duration>
+            <genre>Драма</genre>
+            <rating>8.0</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Кит</title>
+            <duration>117 минут</duration>
+            <genre>Драма</genre>
+            <rating>7.8</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Равные</title>
+            <duration>101 минута</duration>
+            <genre>Фантастика</genre>
+            <rating>6.1</rating>
+        
+        
+    </movie>
+    <movie>
+        
+            <title>Лобстер</title>
+            <duration>119 минут</duration>
+            <genre>Драма</genre>
+            <rating>7.2</rating>
+        
+        
+    </movie>
+    <movie>
+        <title>Интерстеллар</title>
+        <duration>169 минут</duration>
+        <genre>Фантастика</genre>
+        <rating>8.6</rating>
+        
+    </movie>
+    <movie>
+        <title>Бойцовский клуб</title>
+        <duration>139 минут</duration>
+        <genre>Драма</genre>
+        <rating>8.8</rating>
+        
+    </movie>
+    <movie>
+        <title>Властелин колец</title>
+        <duration>201 минута</duration>
+        <genre>Фэнтези</genre>
+        <rating>8.9</rating>
+        
+    </movie>
+    <movie>
+        <title>Маяк</title>
+        <duration>109 минут</duration>
+        <genre>Ужасы</genre>
+        <rating>7.5</rating>
+        
+    </movie>
+    <movie>
+        <title>Загадочная кожа</title>
+        <duration>105 минут</duration>
+        <genre>Драма</genre>
+        <rating>7.4</rating>
+        
+    </movie>
+    <movie>
+        <title>Одержимость</title>
+        <duration>124 минуты</duration>
+        <genre>Триллер</genre>
+        <rating>7.7</rating>
+        
+    </movie>
+    <movie>
+        <title>Марабоун</title>
+        <duration>110 минут</duration>
+        <genre>Триллер</genre>
+        <rating>7.1</rating>
+        
+    </movie>
+    <movie>
+        <title>Исчезнувшая</title>
+        <duration>149 минут</duration>
+        <genre>Триллер</genre>
+        <rating>8.1</rating>
+        
+    </movie>
+    <movie>
+        <title>Девственницы-самоубийцы</title>
+        <duration>97 минут</duration>
+        <genre>Драма</genre>
+        <rating>7.2</rating>
+        
+    </movie>
+    <movie>
+        <title>Смерть ей к лицу</title>
+        <duration>104 минуты</duration>
+        <genre>Фэнтези</genre>
+        <rating>6.6</rating>
+        
+    </movie>
+    <movie>
+        <title>Дюна</title>
+        <duration>155 минут</duration>
+        <genre>Фантастика</genre>
+        <rating>8.0</rating>
+        
+    </movie>
+    <movie>
+        <title>Как отделаться от парня за 10 дней</title>
+        <duration>116 минут</duration>
+        <genre>Комедия</genre>
+        <rating>6.4</rating>
+        
+    </movie>
+    <movie>
+        <title>10 причин моей ненависти</title>
+        <duration>97 минут</duration>
+        <genre>Комедия</genre>
+        <rating>7.3</rating>
+        
+    </movie>
+    <movie>
+        <title>Уиджи: Проклятие Вероники</title>
+        <duration>105 минут</duration>
+        <genre>Ужасы</genre>
+        <rating>6.2</rating>
+        
+    </movie>
+    <movie>
+        <title>Не отпускай меня</title>
+        <duration>103 минуты</duration>
+        <genre>Драма</genre>
+        <rating>7.1</rating>
+        
+    </movie>
+    <movie>
+        <title>Улиточка</title>
+        <duration>92 минуты</duration>
+        <genre>Драма</genre>
+        <rating>7.5</rating>
+        
+    </movie>
+    <movie>
+        <title>Говори</title>
+        <duration>89 минут</duration>
+        <genre>Драма</genre>
+        <rating>7.3</rating>
+        
+    </movie>
+    <movie>
+        <title>Грань будущего</title>
+        <duration>113 минут</duration>
+        <genre>Фантастика</genre>
+        <rating>7.9</rating>
+        
+    </movie>
+    <movie>
+        <title>Что день должен ночи</title>
+        <duration>162 минуты</duration>
+        <genre>Драма</genre>
+        <rating>7.8</rating>
+        
+    </movie>
+    <movie>
+        <title>Уолтер Бойз</title>
+        <duration>107 минут</duration>
+        <genre>Драма</genre>
+        <rating>7.0</rating>
+        
+    </movie>
+    <movie>
+        <title>Апокалипсис сегодня</title>
+        <duration>147 минут</duration>
+        <genre>Военный</genre>
+        <rating>8.4</rating>
+        
+    </movie>
+    <movie>
+        <title>Вечное сияние чистого разума</title>
+        <duration>108 минут</duration>
+        <genre>Драма</genre>
+        <rating>8.3</rating>
+        
+    </movie>
+    <movie>
+        <title>Зеленая книга</title>
+        <duration>130 минут</duration>
+        <genre>Драма</genre>
+        <rating>8.2</rating>
+        
+    </movie>
+    <movie>
+        <title>Славные парни</title>
+        <duration>146 минут</duration>
+        <genre>Криминал</genre>
+        <rating>8.7</rating>
+        
+    </movie>
+</catalog>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои друзья</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #cityFilter {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Мои друзья</h2>
+    <div>Количество друзей: <span id="count"></span></div>
+
+    <label for="cityFilter">Фильтр по городу: </label>
+    <select id="cityFilter" onchange="displayFriends(this.value)">
+        <option value="">Все города</option>
+    </select>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Город</th>
+            </tr>
+        </thead>
+        <tbody id="friendsData"></tbody>
+    </table>
+
+    <h3>JSON-ответ:</h3>
+    <pre id="jsonOutput"></pre>
+
+    <script>
+        let friends = [];
+
+        function my_callback(data) {
+            friends = data.response.items;
+            document.getElementById("count").textContent = data.response.count;
+
+            document.getElementById("jsonOutput").textContent = JSON.stringify(data, null, 2);
+
+            const cities = [...new Set(friends.map(f => f.city?.title).filter(Boolean))];
+            cities.forEach(city => {
+                document.getElementById("cityFilter").innerHTML += `<option value="${city}">${city}</option>`;
+            });
+
+            displayFriends();
+        }
+
+        function displayFriends(city = "") {
+            document.getElementById("friendsData").innerHTML = friends
+                .filter(f => !city || f.city?.title === city)
+                .map(f => `
+                    <tr>
+                        <td>${f.id}</td>
+                        <td>${f.first_name}</td>
+                        <td>${f.last_name}</td>
+                        <td>${f.city?.title || '-'} </td>
+                    </tr>
+                `).join("");
+        }
+        
+        const script = document.createElement("script");
+        const user_id = "58820741";  
+        const access_token = "vk1.a.X8KEL-gmabG47X-y-6Xat4Pi52ylDHx_5hzaHWxTbw68djkcCkcSgSLeXlXt7bepmdBYaWlmM8vjInV0qE_7eLCnqgeWNwtCW0No4-a-JiBMyQZeG9RdSUSzlR6ExgPXYBFCu5Rl8QJec5L3-iwe7HwAVNrUZpMbELOKGsXHLAcP07D9OxdpiytYiJUTl6K20lD7En_nYAb4KncCiJLnXA";
+        const url =
+            "https://api.vk.com/method/friends.get" +
+            "?user_id=" + user_id +
+            "&access_token=" + access_token +
+            "&v=5.131" +
+            "&fields=city" +
+            "&callback=my_callback";
+        script.src = url;
+        document.getElementsByTagName("head")[0].appendChild(script);
+    </script>
+</body>
+
+</html>

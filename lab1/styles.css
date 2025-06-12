@@ -1,0 +1,89 @@
+body {
+    background-color: #f0f8ff;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    color: #4b0082;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #8a2be2; 
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+catalog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff8f0;
+    border-radius: 15px;
+    width: 80%;
+    margin: 40px auto;
+}
+
+movie {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px; 
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #ffcccb;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+movie:hover {
+    transform: translateY(-10px);
+}
+
+title, title1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4b0082;
+}
+
+duration, genre, rating, duration1, genre1, rating1 {
+    font-size: 18px;
+    color: #9932cc;
+}
+
+
+title1 {
+    transition: transform 0.3s ease;
+}
+
+duration1 {
+    transition: transform 0.3s ease;
+}
+
+genre1 {
+    transition: transform 0.3s ease;
+}
+
+rating1 {
+    transition: transform 0.3s ease;
+}
+
+title1:hover {
+    font-size: 30px;
+}
+
+duration1:hover {
+    letter-spacing: 2px;
+}
+
+genre1:hover {
+    font-weight: bold;
+}
+
+rating1:hover {
+    text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
+}

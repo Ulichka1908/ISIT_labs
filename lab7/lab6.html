@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Bot Messages</title>
+</head>
+<body>
+    <h2>Последнее сообщение от бота:</h2>
+    <p id="message">Загрузка...</p>
+    <h2>Аватар пользователя:</h2>
+    <img id="avatar" src="" alt="Аватар" style="max-width: 200px; display: none;">
+    
+    <script>
+        function handleResponse(response) {
+            if (response.result && response.result.length > 0) {
+                let lastMessage = response.result[response.result.length - 1].message;
+                document.getElementById("message").innerText = lastMessage.text || "Нет текста";
+                
+                let userId = lastMessage.from.id;
+                console.log("Получаем фото пользователя с ID:", userId);
+                getUserPhoto(userId);
+            } else {
+                document.getElementById("message").innerText = "Сообщения отсутствуют";
+            }
+        }
+        
+        function handlePhotoResponse(response) {
+            if (response.result && response.result.total_count > 0) {
+                let fileId = response.result.photos[0][0].file_id;
+                let fileUrl = `https://api.telegram.org/bot${token}/getFile?file_id=${fileId}`;
+                console.log("Загружаем файл аватара с file_id:", fileId);
+                fetch(fileUrl)
+                    .then(response => response.json())
+                    .then(data => handleFileResponse(data))
+                    .catch(error => console.log("Ошибка загрузки файла:", error));
+            } else {
+                console.log("У пользователя нет аватара");
+            }
+        }
+        
+        function handleFileResponse(response) {
+            if (response.result && response.result.file_path) {
+                let filePath = response.result.file_path;
+                let photoUrl = `https://api.telegram.org/file/bot${token}/${filePath}`;
+                let avatarImg = document.getElementById("avatar");
+                avatarImg.src = photoUrl;
+                avatarImg.style.display = "block";
+                console.log("Фото профиля загружено:", photoUrl);
+            } else {
+                console.log("Фото профиля не найдено");
+            }
+        }
+        
+        function getUserPhoto(userId) {
+            let url = `https://api.telegram.org/bot${token}/getUserProfilePhotos?user_id=${userId}`;
+            console.log("Запрашиваем фото профиля пользователя по URL:", url);
+            fetch(url)
+                .then(response => response.json())
+                .then(data => handlePhotoResponse(data))
+                .catch(error => console.log("Ошибка загрузки фото профиля:", error));
+        }
+
+        let token = '7728709478:AAH4qCRtvBoGJPpfPUtMyBbxsUMiCoSKs5A'; 
+        let url = `https://api.telegram.org/bot${token}/getUpdates`;
+        
+        fetch(url)
+            .then(response => response.json())
+            .then(data => handleResponse(data))
+            .catch(error => console.log("Ошибка получения обновлений:", error));
+    </script>
+</body>
+</html>

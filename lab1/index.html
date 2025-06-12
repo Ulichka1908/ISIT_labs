@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Парсинг XML</title>
+  <link rel="stylesheet" href="styles_parser.css">
+</head>
+<body>
+
+  <h1>Парсинг XML</h1>
+  <div class="container">
+    <label for="movie-number">Введите номер фильма:</label>
+    <input type="number" id="movie-number" min="-100" placeholder="Номер фильма">
+    <button id="parse-button">Вывести информацию о фильме</button>
+
+    <div class="output" id="output"></div>
+  </div>
+
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'films.xml', true);
+  
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        var xmlDoc = xhr.responseXML;
+        document.getElementById("parse-button").addEventListener("click", function() {
+          var movieNumber = parseInt(document.getElementById("movie-number").value);
+          var outputDiv = document.getElementById("output");
+          outputDiv.innerHTML = '';
+  
+          var movieElements = xmlDoc.getElementsByTagName('movie');
+          var totalMovies = movieElements.length;
+  
+          if (isNaN(movieNumber) || movieNumber === 0) {
+            outputDiv.innerHTML = "<div class='error'>Введите корректное число.</div>";
+            return;
+          }
+  
+          if (movieNumber > 0) {
+            var movieElement = movieElements[movieNumber - 1];
+            if (movieElement) {
+              displayMovie(movieElement, outputDiv);
+            } else {
+              outputDiv.innerHTML = "<div class='error'>Фильм с таким номером не найден.</div>";
+            }
+          } else {
+            var count = Math.abs(movieNumber);
+            if (count > totalMovies) count = totalMovies;
+  
+            for (var i = totalMovies - count; i < totalMovies; i++) {
+              displayMovie(movieElements[i], outputDiv);
+              outputDiv.innerHTML += "<hr>";
+            }
+          }
+        });
+      } else {
+        console.error("Ошибка загрузки XML файла.");
+      }
+    };
+  
+    xhr.send();
+  
+    function displayMovie(movieElement, outputDiv) {
+      var title = movieElement.getElementsByTagName('title')[0].textContent;
+      var duration = movieElement.getElementsByTagName('duration')[0].textContent;
+      var genre = movieElement.getElementsByTagName('genre')[0].textContent;
+      var rating = movieElement.getElementsByTagName('rating')[0].textContent;
+  
+      outputDiv.innerHTML += `
+        <p><strong>Название:</strong> ${title}</p>
+        <p><strong>Длительность:</strong> ${duration}</p>
+        <p><strong>Жанр:</strong> ${genre}</p>
+        <p><strong>Рейтинг:</strong> ${rating}</p>
+      `;
+    }
+  </script>
+  
+  
+
+</body>
+</html>
